@@ -1,0 +1,35 @@
+:root {
+    --ideal-viewport-width: 1400;
+
+    --fs-root-raw: 10;
+    --fs-16-raw: 16;
+    --fs-20-raw: 20;
+    --fs-30-raw: 30;
+    --fs-48-raw: 48;
+
+    --fs-16: calc(var(--fs-16-raw) * 0.1rem);
+    --fs-20: calc(var(--fs-20-raw) * 0.1rem);
+    --fs-30: calc(var(--fs-30-raw) * 0.1rem);
+    --fs-48: calc(var(--fs-48-raw) * 0.1rem);
+}
+
+html {
+    font-size: calc(var(--fs-root-raw)*1px);
+}
+
+body{
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: clamp(var(--fs-30), 2.25vw + 1.65rem, var(--fs-48));
+}
+
+h2{
+    font-size: clamp(var(--fs-20),calc((var(--fs-30-raw) / var(--ideal-viewport-width)) * 100vw),var(--fs-30));
+}
+
+p{
+    font-size: clamp(16px, calc(0.7vw + 1.2rem), 20px)
+}
+

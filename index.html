@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Fluid Typography</title>
+</head>
+<body>
+<h1>How to Get a Pixel-Perfect, Linearly Scaled UI</h1>
+<p>But what if we really do want pixel perfection? What if, let’s say, we are developing a complex real-time analytics
+    dashboard to be viewed on large TVs at a conference room or as some PWA to be opened exclusively on mobile and
+    tablet devices, as opposed to text-heavy blogs and news websites? Those are cases where we need more precision.</p>
+<h2>Scaling our UI</h2>
+<p>This design was created with a container that’s 1600px wide. Let’s assume that at 1600px, the ideal font size for the
+    titles of the cards should be 16px since that’s how it’s designed.</p>
+<p>As you can see, we treat the ideal font size we obtained from the design as a base and multiply it by the difference
+    between the current and ideal viewport widths. How does this look mathematically? Let’s say we are viewing this web
+    app on a screen with the exact same width as the mockup</p>
+<h2>Clamping the min and max viewport width</h2>
+<p>Using this current approach, the design scales to match the viewport size, no matter how big or small the viewport
+    gets. We can prevent this with CSS clamp() which allows us to set a minimum width of 350px and maximum width of
+    3840px. This means that if we are to open the web app on a device with 5000px width, our layout will stay locked at
+    3840px</p>
+</body>
+</html>
